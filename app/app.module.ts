@@ -5,11 +5,21 @@ import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './navi/navigator';
 
-import { Hello1Component } from './sample1/helloAngular';
-import { Hello2Component } from './sample1/hello.component';
+import { Hello1Component } from './chapter3/sample1/helloAngular';
+import { Hello2Component } from './chapter3/sample1/hello.component';
 
-import ComponentOne from './sample2/component-one';
-import ComponentTwo from './sample2/component-two';
+import ComponentOne from './chapter3/sample2/component-one';
+import ComponentTwo from './chapter3/sample2/component-two';
+
+import { NestedParentComponent } from './chapter4/sample3/parent.component';
+import { NestedChildComponent } from './chapter4/sample3/child.component';
+import { NestedGrandsonComponent } from './chapter4/sample3/grandson.component';
+import { ParentToChildInputComponent } from './chapter4/sample4/parent-to-child-input.component';
+import { ChildInputComponent } from './chapter4/sample4/child-input.component';
+
+import { ChildToParentComponent } from './chapter4/sample5/child-to-parent.component';
+import { ChildComponent } from './chapter4/sample5/child.component';
+
 
 @NgModule( {
     imports: [
@@ -21,6 +31,9 @@ import ComponentTwo from './sample2/component-two';
         AppComponent
         , ComponentOne, ComponentTwo
         , Hello1Component, Hello2Component
+        , NestedParentComponent, NestedChildComponent, NestedGrandsonComponent
+        , ParentToChildInputComponent, ChildInputComponent
+        , ChildToParentComponent, ChildComponent
     ],
     providers: [
         appRoutingProviders
