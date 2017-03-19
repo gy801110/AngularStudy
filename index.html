@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello Angular 2 Application</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
-    <script src="https://unpkg.com/zone.js@0.6.25?main=browser"></script>
-    <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
-	<script src="https://unpkg.com/systemjs@0.19.27/dist/system.src.js"></script>
-    <script src="systemjs.config.js"></script>
+<head>
+	<title>Angular2 Study</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Project Home</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<app>Loading1...</app>
+		</div>
+	</div>
+	
+	<script src="node_modules/core-js/client/shim.min.js"></script>
+	<script src="https://unpkg.com/zone.js@0.6.25?main=browser"></script>
+	<script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="systemjs.config.js"></script>
 	<script>document.write('<base href="' + document.location + '" />');</script>
-  </head>  
-  <body>
-    <a href="/">Home</a>
-    <app>Loading1...</app>
-    <script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
-  </body>
+</body>
 </html>
