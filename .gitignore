@@ -1,5 +1,6 @@
 /node_modules/
 *.map
 /app/*/*.js
+/app/*/*/*.js
 main.js
 app.module.js

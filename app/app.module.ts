@@ -21,6 +21,16 @@ import { ChildInputComponent } from './chapter4/sample2/child-input.component';
 import { ChildToParentComponent } from './chapter4/sample3/child-to-parent.component';
 import { ChildComponent } from './chapter4/sample3/child.component';
 import { ViewchildComponent, Item, ItemComponent } from './chapter4/sample4/viewchild.component';
+import { ChildCmp, ViewchildrenComponent } from './chapter4/sample5/viewchildren.component';
+import { GroupTitle, childButtonCmp, ButtonGroup, ContentChildComp } from './chapter4/sample6/contentchild.component';
+import { Word, WordGroup, ContentChildrenComp } from './chapter4/sample7/contentchildren.component';
+import { ComponentStyles } from './chapter4/sample8/component.styles.1';
+import { ComponentStyleComponent } from './chapter4/sample9/component-style.component';
+import { FirstDepthComponent } from './chapter4/sample9/first-depth.component';
+import { SecondDepthComponent } from './chapter4/sample9/second-depth.component';
+
+import { HelloComponent } from './chapter5/sample1/hello.component';
+import { OopComponent } from './chapter5/sample2/oop.component';
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -34,6 +44,12 @@ export const appRoutes: Routes = [
     , { path: 'parent-to-child-input', component: ParentToChildInputComponent }
     , { path: 'app-root', component: ChildToParentComponent }
     , { path: 'app-view-child', component: ViewchildComponent }
+    , { path: 'some-cmp', component: ViewchildrenComponent }
+    , { path: 'app-contentchild', component: ContentChildComp }
+    , { path: 'example-app', component: ContentChildrenComp }
+    , { path: 'component-styles', component: ComponentStyleComponent }
+    , { path: 'hello', component: HelloComponent }
+    , { path: 'oop-cmp', component: OopComponent }
 ];
 
 const appRoutingProviders: any[] = [];
@@ -54,6 +70,13 @@ const routing = RouterModule.forRoot( appRoutes );
         , ParentToChildInputComponent, ChildInputComponent // chapter4.sample2
         , ChildToParentComponent, ChildComponent // chapter4.sample3
         , ViewchildComponent, Item, ItemComponent // chapter4.sample4
+        , ChildCmp, ViewchildrenComponent // chapter4.sample5
+        , GroupTitle, childButtonCmp, ButtonGroup, ContentChildComp // chapter4.sample6
+        , Word, WordGroup, ContentChildrenComp // chapter4.sample7
+        , ComponentStyles // cahter4.sample8
+        , ComponentStyleComponent, FirstDepthComponent, SecondDepthComponent // chapter4.sample9
+        , HelloComponent // chapter5.sample1
+        , OopComponent // chapter5.sample2
     ],
     providers: [
         appRoutingProviders
