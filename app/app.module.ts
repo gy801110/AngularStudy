@@ -31,10 +31,20 @@ import { SecondDepthComponent } from './chapter4/sample9/second-depth.component'
 
 import { HelloComponent } from './chapter5/sample1/hello.component';
 import { OopComponent } from './chapter5/sample2/oop.component';
+import { MockComponent } from './chapter5/sample3/mock.component';
+
+import { PromiseComponent } from './chapter5/sample4/promise.component';
+import { ListComponent } from './chapter5/sample4/list.component';
+
+import { ParentComponent } from './chapter5/sample5/parent.component';
+import { TaxiComponent } from './chapter5/sample5/taxi.component';
+import { CarComponent } from './chapter5/sample5/car.component';
+
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
-    { path: 'hello1', component: Hello1Component }
+    { path: '', component: Hello1Component }
+    ,{ path: 'hello1', component: Hello1Component }
     , { path: 'hello2', component: Hello2Component }
     , { path: 'component-one', component: ComponentOne }
     , { path: 'component-two/:id', component: ComponentTwo }
@@ -50,6 +60,9 @@ export const appRoutes: Routes = [
     , { path: 'component-styles', component: ComponentStyleComponent }
     , { path: 'hello', component: HelloComponent }
     , { path: 'oop-cmp', component: OopComponent }
+    , { path: 'mock-test', component: MockComponent }
+    , { path: 'promise', component: PromiseComponent }
+    , { path: 'parent-component', component: ParentComponent }
 ];
 
 const appRoutingProviders: any[] = [];
@@ -77,10 +90,11 @@ const routing = RouterModule.forRoot( appRoutes );
         , ComponentStyleComponent, FirstDepthComponent, SecondDepthComponent // chapter4.sample9
         , HelloComponent // chapter5.sample1
         , OopComponent // chapter5.sample2
+        , MockComponent // Chapter5.sample3
+        , PromiseComponent, ListComponent // Chapter5.sample4
+        , ParentComponent, CarComponent, TaxiComponent // Chapter5.sample5
     ],
-    providers: [
-        appRoutingProviders
-    ],
+    providers: [appRoutingProviders],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

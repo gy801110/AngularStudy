@@ -4,3 +4,4 @@
 /app/*/*/*.js
 main.js
 app.module.js
+/bower_components/

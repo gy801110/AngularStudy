@@ -20,6 +20,9 @@ import {Component, ContentChild, Directive, Input} from '@angular/core';
               <li><a [routerLink]="['/component-styles']">컴포넌트스타일 연습</a></li>
               <li><a [routerLink]="['/hello']">Hello 서비스</a></li>
               <li><a [routerLink]="['/oop-cmp']">객체지향서비스</a></li>
+              <li><a [routerLink]="['/mock-test']">목 객체 서비스</a></li>
+              <li><a [routerLink]="['/promise']">프로미스 서비스</a></li>
+              <li><a [routerLink]="['/parent-component']">서비스를 통한 데이터 교환</a></li>
           </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
