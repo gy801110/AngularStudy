@@ -3,7 +3,7 @@
 AngularStudy
 
 
-# Bower Components 추가  npm install
+# 프로젝트 실행 방법
 
 npm install -g bower 
 
