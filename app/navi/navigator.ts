@@ -6,29 +6,20 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
   template: `
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="index.html">Project Home</a>
-          </div>
-          <!-- /.navbar-header -->
+          <app-top></app-top>
           
           <div class="navbar-default sidebar" role="navigation">
               <div class="sidebar-nav navbar-collapse" style="height:800px;overflow-y:auto">
                   <ul class="nav" id="side-menu">
                       <li>
-                          <a (click)="menuClick('chapter3')">Chapter3<span class="fa arrow"></span></a>
+                          <a (click)="menuClick('chapter3')">Chapter3.타입스크립트<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level" id="chapter3_subul" style="display:none">
-                              <li><a [routerLink]="['/component-one']">Component1</a></li>
+                              <li><a [routerLink]="appUrl">{{appTitle}}</a></li>
                               <li><a [routerLink]="['/component-two']">Component2</a></li>
                           </ul>
                       </li>
                       <li>
-                          <a (click)="menuClick('chapter4')">Chapter4<span class="fa arrow"></span></a>
+                          <a (click)="menuClick('chapter4')">Chapter4.컴포넌트<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level" id="chapter4_subul" style="display:none">
                               <li><a [routerLink]="['/hello1']">hello1</a></li>
                               <li><a [routerLink]="['/hello2']">hello2</a></li>
@@ -41,12 +32,23 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
                               <li><a [routerLink]="['/example-app']">ContentChidren 그룹값</a></li>
                               <li><a [routerLink]="['/example-app']">컴포넌트스타일</a></li>
                               <li><a [routerLink]="['/component-styles']">컴포넌트스타일 연습</a></li>
+                          </ul>
+                      </li>
+                      <li>
+                          <a (click)="menuClick('chapter5')">Chapter5.서비스<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level" id="chapter5_subul" style="display:none">
                               <li><a [routerLink]="['/hello']">Hello 서비스</a></li>
                               <li><a [routerLink]="['/oop-cmp']">객체지향서비스</a></li>
                               <li><a [routerLink]="['/mock-test']">목 객체 서비스</a></li>
                               <li><a [routerLink]="['/promise']">프로미스 서비스</a></li>
                               <li><a [routerLink]="['/parent-component']">서비스를 통한 데이터 교환</a></li>
-                        </ul>
+                          </ul>
+                      </li>
+                      <li>
+                          <a (click)="menuClick('chapter6')">Chapter6.모듈<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level" id="chapter6_subul" style="display:none">
+                              <li><a [routerLink]="['/core-test']">핵심모듈</a></li>
+                          </ul>
                       </li>
                   </ul>
               </div>
@@ -60,12 +62,12 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
       </div>
   `
 })
-export class AppComponent { 
+export class AppComponent {
+    @Input() appTitle:string = "Component1";
+    @Input() appUrl:string = "/component-one";
+    
     ngAfterViewInit() {
-        console.log("ngAfterViewInit....");
-        
         $( document ).ready(function(){
-            console.log("Ready!");
         });
     }
     

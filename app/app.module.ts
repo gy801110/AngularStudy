@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; //ngModel binding
 //import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './navi/navigator';
+import { AppTopComponent } from './navi/navigator.top';
 
 import { Hello1Component } from './chapter3/sample1/helloAngular';
 import { Hello2Component } from './chapter3/sample1/hello.component';
@@ -40,11 +41,15 @@ import { ParentComponent } from './chapter5/sample5/parent.component';
 import { TaxiComponent } from './chapter5/sample5/taxi.component';
 import { CarComponent } from './chapter5/sample5/car.component';
 
+import { UserServiceConfig, UserService } from './chapter6/sample1/user.service';
+import { TitleComponent } from './chapter6/sample1/title.component';
+import { CoreTestComponent } from './chapter6/sample1/core-test.component';
+
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
     { path: '', component: Hello1Component }
-    ,{ path: 'hello1', component: Hello1Component }
+    , { path: 'hello1', component: Hello1Component }
     , { path: 'hello2', component: Hello2Component }
     , { path: 'component-one', component: ComponentOne }
     , { path: 'component-two/:id', component: ComponentTwo }
@@ -63,9 +68,9 @@ export const appRoutes: Routes = [
     , { path: 'mock-test', component: MockComponent }
     , { path: 'promise', component: PromiseComponent }
     , { path: 'parent-component', component: ParentComponent }
+    , { path: 'core-test', component: CoreTestComponent }
 ];
 
-const appRoutingProviders: any[] = [];
 const routing = RouterModule.forRoot( appRoutes );
 
 /* 모듈 설정. */
@@ -76,7 +81,7 @@ const routing = RouterModule.forRoot( appRoutes );
         routing
     ],
     declarations: [
-        AppComponent
+        AppComponent, AppTopComponent // Navigator
         , Hello1Component, Hello2Component // chapter3.sample1
         , ComponentOne, ComponentTwo // chapter3.sample2
         , NestedParentComponent, NestedChildComponent, NestedGrandsonComponent // chapter4.sample1
@@ -93,8 +98,27 @@ const routing = RouterModule.forRoot( appRoutes );
         , MockComponent // Chapter5.sample3
         , PromiseComponent, ListComponent // Chapter5.sample4
         , ParentComponent, CarComponent, TaxiComponent // Chapter5.sample5
+        , TitleComponent, CoreTestComponent // Chapter6.sample1
     ],
-    providers: [appRoutingProviders],
+    exports: [TitleComponent],
+    providers: [UserService],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+    constructor( @Optional() @SkipSelf() parentModule: AppModule ) {
+        if ( parentModule ) {
+            throw new Error( 'CoreModule이 이미 로딩되었습니다.' );
+        }
+        console.log( "AppModule이 시작되었습니다." );
+    }
+
+    static forRoot( config: UserServiceConfig ): ModuleWithProviders {
+        console.log( "AppModule forRoot." );
+        return {
+            ngModule: AppModule,
+            providers: [
+                { provide: UserServiceConfig, useValue: config }
+            ]
+        };
+    }
+}
