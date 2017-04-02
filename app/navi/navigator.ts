@@ -51,6 +51,13 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
                               <li><a [routerLink]="['/member-list']">특정모듈</a></li>
                           </ul>
                       </li>
+                      <li>
+                          <a (click)="menuClick('chapter7')">Chapter7.라우터<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level" id="chapter7_subul" style="display:none">
+                              <li><a [routerLink]="['/member']">라우터모듈</a></li>
+                              <li><a [routerLink]="['/children']">가드</a></li>
+                          </ul>
+                      </li>
                   </ul>
               </div>
           </div>

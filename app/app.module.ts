@@ -9,7 +9,6 @@ import { AppTopComponent } from './navi/navigator.top';
 
 import { Hello1Component } from './chapter3/sample1/helloAngular';
 import { Hello2Component } from './chapter3/sample1/hello.component';
-
 import ComponentOne from './chapter3/sample2/component-one';
 import ComponentTwo from './chapter3/sample2/component-two';
 
@@ -18,7 +17,6 @@ import { NestedChildComponent } from './chapter4/sample1/child.component';
 import { NestedGrandsonComponent } from './chapter4/sample1/grandson.component';
 import { ParentToChildInputComponent } from './chapter4/sample2/parent-to-child-input.component';
 import { ChildInputComponent } from './chapter4/sample2/child-input.component';
-
 import { ChildToParentComponent } from './chapter4/sample3/child-to-parent.component';
 import { ChildComponent } from './chapter4/sample3/child.component';
 import { ViewchildComponent, Item, ItemComponent } from './chapter4/sample4/viewchild.component';
@@ -33,10 +31,8 @@ import { SecondDepthComponent } from './chapter4/sample9/second-depth.component'
 import { HelloComponent } from './chapter5/sample1/hello.component';
 import { OopComponent } from './chapter5/sample2/oop.component';
 import { MockComponent } from './chapter5/sample3/mock.component';
-
 import { PromiseComponent } from './chapter5/sample4/promise.component';
 import { ListComponent } from './chapter5/sample4/list.component';
-
 import { ParentComponent } from './chapter5/sample5/parent.component';
 import { TaxiComponent } from './chapter5/sample5/taxi.component';
 import { CarComponent } from './chapter5/sample5/car.component';
@@ -44,9 +40,10 @@ import { CarComponent } from './chapter5/sample5/car.component';
 import { UserServiceConfig, UserService } from './chapter6/sample1/user.service';
 import { TitleComponent } from './chapter6/sample1/title.component';
 import { CoreTestComponent } from './chapter6/sample1/core-test.component';
-
 import { MemberModule } from './chapter6/sample2/member.module';
 
+import { MemberModule2 } from './chapter7/sample1/member.module';
+import { ChildrenModule } from './chapter7/sample2/children.module';
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -72,6 +69,8 @@ export const appRoutes: Routes = [
     , { path: 'parent-component', component: ParentComponent }
     , { path: 'core-test', component: CoreTestComponent }
     , { path: 'member-list', component: MemberModule }
+    , { path: 'member', component: MemberModule2 }
+    , { path: 'child1', component: ChildrenModule }
 ];
 
 const routing = RouterModule.forRoot( appRoutes );
@@ -79,10 +78,10 @@ const routing = RouterModule.forRoot( appRoutes );
 /* 모듈 설정. */
 @NgModule( {
     imports: [
-        BrowserModule,
-        FormsModule,
-        routing,
-        MemberModule // chapter6.sample2
+        BrowserModule, FormsModule, routing,
+        MemberModule, // chapter6.sample2
+        MemberModule2, // chapter7.sample1
+        ChildrenModule // chapter7.smaple2
     ],
     declarations: [
         AppComponent, AppTopComponent // Navigator
