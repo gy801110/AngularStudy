@@ -48,6 +48,7 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
                           <a (click)="menuClick('chapter6')">Chapter6.모듈<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level" id="chapter6_subul" style="display:none">
                               <li><a [routerLink]="['/core-test']">핵심모듈</a></li>
+                              <li><a [routerLink]="['/member-list']">특정모듈</a></li>
                           </ul>
                       </li>
                   </ul>

@@ -45,6 +45,8 @@ import { UserServiceConfig, UserService } from './chapter6/sample1/user.service'
 import { TitleComponent } from './chapter6/sample1/title.component';
 import { CoreTestComponent } from './chapter6/sample1/core-test.component';
 
+import { MemberModule } from './chapter6/sample2/member.module';
+
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -69,6 +71,7 @@ export const appRoutes: Routes = [
     , { path: 'promise', component: PromiseComponent }
     , { path: 'parent-component', component: ParentComponent }
     , { path: 'core-test', component: CoreTestComponent }
+    , { path: 'member-list', component: MemberModule }
 ];
 
 const routing = RouterModule.forRoot( appRoutes );
@@ -78,7 +81,8 @@ const routing = RouterModule.forRoot( appRoutes );
     imports: [
         BrowserModule,
         FormsModule,
-        routing
+        routing,
+        MemberModule // chapter6.sample2
     ],
     declarations: [
         AppComponent, AppTopComponent // Navigator
