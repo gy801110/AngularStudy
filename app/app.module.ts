@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; //ngModel binding
 //import { routing, appRoutingProviders } from './app.routing';
+import { AppRoutingModule } from './chapter7/sample2/app.routing';
 
 import { AppComponent } from './navi/navigator';
 import { AppTopComponent } from './navi/navigator.top';
@@ -44,6 +45,7 @@ import { MemberModule } from './chapter6/sample2/member.module';
 
 import { MemberModule2 } from './chapter7/sample1/member.module';
 import { ChildrenModule } from './chapter7/sample2/children.module';
+import { AppLoginModule } from './chapter7/sample2/app.module';
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -71,6 +73,7 @@ export const appRoutes: Routes = [
     , { path: 'member-list', component: MemberModule }
     , { path: 'member', component: MemberModule2 }
     , { path: 'child1', component: ChildrenModule }
+    , { path: 'login', component: AppLoginModule }
 ];
 
 const routing = RouterModule.forRoot( appRoutes );
@@ -78,10 +81,11 @@ const routing = RouterModule.forRoot( appRoutes );
 /* 모듈 설정. */
 @NgModule( {
     imports: [
-        BrowserModule, FormsModule, routing,
-        MemberModule, // chapter6.sample2
-        MemberModule2, // chapter7.sample1
-        ChildrenModule // chapter7.smaple2
+        BrowserModule, FormsModule, routing 
+        ,MemberModule // chapter6.sample2
+        ,MemberModule2 // chapter7.sample1
+        ,ChildrenModule // chapter7.sample2
+        ,AppLoginModule // chapter7.sample2
     ],
     declarations: [
         AppComponent, AppTopComponent // Navigator
