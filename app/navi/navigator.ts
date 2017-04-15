@@ -72,6 +72,15 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
                               <li><a routerLink="/active/child2" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">[로그인 후 접근]/active/child2</a></li>
                           </ul>
                       </li>
+                      <li>
+                          <a (click)="menuClick('chapter8')">Chapter8.제공자<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level" id="chapter8_subul" style="display:none">
+                              <li><a [routerLink]="['/app-value-provider']">값 제공자</a></li>
+                              <li><a [routerLink]="['/app-factory-provider']">팩토리 제공자</a></li>
+                              <li><a [routerLink]="['/app-class-provider']">클래스 제공자1</a></li>
+                              <li><a [routerLink]="['/app-aliased-class-provider']">클래스 제공자2</a></li>
+                          </ul>
+                      </li>
                   </ul>
               </div>
           </div>

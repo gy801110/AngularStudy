@@ -38,14 +38,16 @@ import { ParentComponent } from './chapter5/sample5/parent.component';
 import { TaxiComponent } from './chapter5/sample5/taxi.component';
 import { CarComponent } from './chapter5/sample5/car.component';
 
-import { UserServiceConfig, UserService } from './chapter6/sample1/user.service';
-import { TitleComponent } from './chapter6/sample1/title.component';
-import { CoreTestComponent } from './chapter6/sample1/core-test.component';
-import { MemberModule } from './chapter6/sample2/member.module';
+import { Chapter6Sample1 } from './chapter6/sample1/app.module';
+import { Chapter6Sample2 } from './chapter6/sample2/app.module';
 
-import { MemberModule2 } from './chapter7/sample1/member.module';
+import { Chapter7Sample1 } from './chapter7/sample1/app.module';
 import { ChildrenModule } from './chapter7/sample2/children.module';
 import { AppLoginModule } from './chapter7/sample2/app.module';
+
+import { Chapter8Sample1 } from './chapter8/sample1/app.module';
+import { Chapter8Sample2 } from './chapter8/sample2/app.module';
+import { Chapter8Sample3 } from './chapter8/sample3/app.module';
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -69,11 +71,8 @@ export const appRoutes: Routes = [
     , { path: 'mock-test', component: MockComponent }
     , { path: 'promise', component: PromiseComponent }
     , { path: 'parent-component', component: ParentComponent }
-    , { path: 'core-test', component: CoreTestComponent }
-    , { path: 'member-list', component: MemberModule }
-    , { path: 'member', component: MemberModule2 }
     , { path: 'child1', component: ChildrenModule }
-    , { path: 'login', component: AppLoginModule }
+    /*, { path: 'login', component: AppLoginModule }*/
 ];
 
 const routing = RouterModule.forRoot( appRoutes );
@@ -81,11 +80,15 @@ const routing = RouterModule.forRoot( appRoutes );
 /* 모듈 설정. */
 @NgModule( {
     imports: [
-        BrowserModule, FormsModule, routing 
-        ,MemberModule // chapter6.sample2
-        ,MemberModule2 // chapter7.sample1
+        BrowserModule, FormsModule, routing
+        ,Chapter6Sample1 // chapter6.sample1
+        ,Chapter6Sample2 // chapter6.sample2
+        ,Chapter7Sample1 // chapter7.sample1
         ,ChildrenModule // chapter7.sample2
-        ,AppLoginModule // chapter7.sample2
+        //,AppLoginModule // chapter7.sample2
+        ,Chapter8Sample1 // chapter8.sample1
+        ,Chapter8Sample2 // chapter8.sample2
+        ,Chapter8Sample3 // chapter8.sample3
     ],
     declarations: [
         AppComponent, AppTopComponent // Navigator
@@ -105,10 +108,7 @@ const routing = RouterModule.forRoot( appRoutes );
         , MockComponent // Chapter5.sample3
         , PromiseComponent, ListComponent // Chapter5.sample4
         , ParentComponent, CarComponent, TaxiComponent // Chapter5.sample5
-        , TitleComponent, CoreTestComponent // Chapter6.sample1
     ],
-    exports: [TitleComponent],
-    providers: [UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -117,15 +117,5 @@ export class AppModule {
             throw new Error( 'CoreModule이 이미 로딩되었습니다.' );
         }
         console.log( "AppModule이 시작되었습니다." );
-    }
-
-    static forRoot( config: UserServiceConfig ): ModuleWithProviders {
-        console.log( "AppModule forRoot." );
-        return {
-            ngModule: AppModule,
-            providers: [
-                { provide: UserServiceConfig, useValue: config }
-            ]
-        };
     }
 }
