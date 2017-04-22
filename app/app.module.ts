@@ -29,25 +29,15 @@ import { ComponentStyleComponent } from './chapter4/sample9/component-style.comp
 import { FirstDepthComponent } from './chapter4/sample9/first-depth.component';
 import { SecondDepthComponent } from './chapter4/sample9/second-depth.component';
 
-import { HelloComponent } from './chapter5/sample1/hello.component';
-import { OopComponent } from './chapter5/sample2/oop.component';
-import { MockComponent } from './chapter5/sample3/mock.component';
-import { PromiseComponent } from './chapter5/sample4/promise.component';
-import { ListComponent } from './chapter5/sample4/list.component';
-import { ParentComponent } from './chapter5/sample5/parent.component';
-import { TaxiComponent } from './chapter5/sample5/taxi.component';
-import { CarComponent } from './chapter5/sample5/car.component';
-
-import { Chapter6Sample1 } from './chapter6/sample1/app.module';
-import { Chapter6Sample2 } from './chapter6/sample2/app.module';
+import { Chapter5 } from './chapter5/app.module';
+import { Chapter6 } from './chapter6/app.module';
 
 import { Chapter7Sample1 } from './chapter7/sample1/app.module';
 import { ChildrenModule } from './chapter7/sample2/children.module';
 import { AppLoginModule } from './chapter7/sample2/app.module';
 
-import { Chapter8Sample1 } from './chapter8/sample1/app.module';
-import { Chapter8Sample2 } from './chapter8/sample2/app.module';
-import { Chapter8Sample3 } from './chapter8/sample3/app.module';
+import { Chapter8 } from './chapter8/app.module';
+import { Chapter9 } from './chapter9/app.module';
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -66,11 +56,6 @@ export const appRoutes: Routes = [
     , { path: 'app-contentchild', component: ContentChildComp }
     , { path: 'example-app', component: ContentChildrenComp }
     , { path: 'component-styles', component: ComponentStyleComponent }
-    , { path: 'hello', component: HelloComponent }
-    , { path: 'oop-cmp', component: OopComponent }
-    , { path: 'mock-test', component: MockComponent }
-    , { path: 'promise', component: PromiseComponent }
-    , { path: 'parent-component', component: ParentComponent }
     , { path: 'child1', component: ChildrenModule }
     /*, { path: 'login', component: AppLoginModule }*/
 ];
@@ -81,14 +66,13 @@ const routing = RouterModule.forRoot( appRoutes );
 @NgModule( {
     imports: [
         BrowserModule, FormsModule, routing
-        ,Chapter6Sample1 // chapter6.sample1
-        ,Chapter6Sample2 // chapter6.sample2
-        ,Chapter7Sample1 // chapter7.sample1
+        ,Chapter5
+        ,Chapter6
+        ,Chapter7Sample1
         ,ChildrenModule // chapter7.sample2
         //,AppLoginModule // chapter7.sample2
-        ,Chapter8Sample1 // chapter8.sample1
-        ,Chapter8Sample2 // chapter8.sample2
-        ,Chapter8Sample3 // chapter8.sample3
+        ,Chapter8
+        ,Chapter9
     ],
     declarations: [
         AppComponent, AppTopComponent // Navigator
@@ -103,11 +87,6 @@ const routing = RouterModule.forRoot( appRoutes );
         , Word, WordGroup, ContentChildrenComp // chapter4.sample7
         , ComponentStyles // cahter4.sample8
         , ComponentStyleComponent, FirstDepthComponent, SecondDepthComponent // chapter4.sample9
-        , HelloComponent // chapter5.sample1
-        , OopComponent // chapter5.sample2
-        , MockComponent // Chapter5.sample3
-        , PromiseComponent, ListComponent // Chapter5.sample4
-        , ParentComponent, CarComponent, TaxiComponent // Chapter5.sample5
     ],
     bootstrap: [AppComponent]
 })

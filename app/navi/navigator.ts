@@ -81,6 +81,17 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
                               <li><a [routerLink]="['/app-aliased-class-provider']">클래스 제공자2</a></li>
                           </ul>
                       </li>
+                      <li>
+                          <a (click)="menuClick('chapter9')">Chapter9.바인딩<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level" id="chapter9_subul" style="display:none">
+                              <li><a [routerLink]="['/app-interpolation']">단방향바인딩</a></li>
+                              <li><a [routerLink]="['/app-oneway-expression']">프로퍼티바인딩</a></li>
+                              <li><a [routerLink]="['/app-oneway-statement']">이벤트바인딩</a></li>
+                              <li><a [routerLink]="['/app-twoway-ngmodel']">양방향바인딩</a></li>
+                              <li><a [routerLink]="['/app-ngclass']">ngClass</a></li>
+                              <li><a [routerLink]="['/app-ngstyle']">ngStyle</a></li>
+                          </ul>
+                      </li>
                   </ul>
               </div>
           </div>
