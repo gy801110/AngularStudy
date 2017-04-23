@@ -38,6 +38,7 @@ import { AppLoginModule } from './chapter7/sample2/app.module';
 
 import { Chapter8 } from './chapter8/app.module';
 import { Chapter9 } from './chapter9/app.module';
+import { Chapter10 } from './chapter10/app.module';
 
 /* 라우터 설정. */
 export const appRoutes: Routes = [
@@ -66,13 +67,14 @@ const routing = RouterModule.forRoot( appRoutes );
 @NgModule( {
     imports: [
         BrowserModule, FormsModule, routing
-        ,Chapter5
-        ,Chapter6
-        ,Chapter7Sample1
-        ,ChildrenModule // chapter7.sample2
+        , Chapter5
+        , Chapter6
+        , Chapter7Sample1
+        , ChildrenModule // chapter7.sample2
         //,AppLoginModule // chapter7.sample2
-        ,Chapter8
-        ,Chapter9
+        , Chapter8
+        , Chapter9
+        , Chapter10
     ],
     declarations: [
         AppComponent, AppTopComponent // Navigator

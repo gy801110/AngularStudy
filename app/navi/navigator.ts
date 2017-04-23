@@ -92,6 +92,13 @@ let $ = require('../../bower_components/jquery/dist/jquery.min.js');
                               <li><a [routerLink]="['/app-ngstyle']">ngStyle</a></li>
                           </ul>
                       </li>
+                      <li>
+                          <a (click)="menuClick('chapter10')">Chapter10.바인딩<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level" id="chapter10_subul" style="display:none">
+                              <li><a [routerLink]="['/app-pass-to-directive']">커스텀지시자(인사말출력)</a></li>
+                              <li><a [routerLink]="['/app-binding-to-directive']">지시자로부터 응답받기</a></li>
+                          </ul>
+                      </li>
                   </ul>
               </div>
           </div>
